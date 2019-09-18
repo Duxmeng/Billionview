@@ -1,0 +1,14 @@
+/* pages/browseuser/browseuser.wxss */
+@import "../mine/Mywallet/Mywallet.wxss";
+@import "../mine/Mywallet/mwdetailed/mwdetailed.wxss";
+.browseye{height:40rpx;line-height:40rpx;font-size:28rpx;margin-top:25rpx;position:relative;align-self:flex-end;}
+.browseye image{width:28rpx;height:21rpx;margin-right:14rpx;}
+.browsew{padding-left:30rpx;background:#fff;}
+.wallet{margin-bottom:0rpx;}
+.deail_listl{width:400rpx;}
+.deail_list{padding-left:0rem;align-items:center;}
+.deail_listr .mywalletname{color:#b2b2b2;}
+.deail_listl .mywalletname{font-weight: 400;}
+.deail_listl .mywalletm{color:#b2b2b2;}
+.deail_listr .mywalletm{font-weight:400;}
+.browimg{width:120rpx;height:120rpx;border-radius: 100%;}

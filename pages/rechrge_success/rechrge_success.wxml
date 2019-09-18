@@ -1,0 +1,8 @@
+<!--pages/rechrge_success/rechrge_success.wxml-->
+<view class='center'>
+  <view class='su_img'><image src='../../images/sucess.png'></image></view>
+  <view class='resu_text'>充值成功</view>
+  <view class='platext'>充值金额</view>
+  <view class='resumoney'>¥{{money}}</view>
+</view>
+<view class='button' bindtap='finished'>完成</view>

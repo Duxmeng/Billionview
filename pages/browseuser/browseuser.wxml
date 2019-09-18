@@ -1,0 +1,21 @@
+<!--pages/browseuser/browseuser.wxml-->
+<view class='wallet'>
+  <view class='balance'>视频支出金额</view> 
+  <view class='balance_detail'>
+    <view class='detail2'><text class='detail1'>¥</text>{{videomoney}}</view>
+    <view class='browseye'><image src='../../images/browse.png'></image>{{seeNum}}</view>
+  </view>
+</view>
+<view class='browsew'>
+  <view class='deail_list' wx:for="{{browselist}}" wx:key="{{browselistIndex}}">
+    <image class='browimg' src='{{URL}}{{item.avatar}}'></image>
+    <view class='deail_listl'>
+      <view class='mywalletname'>{{item.member}}</view>
+      <view class='mywalletm'>观看一次</view>
+    </view> 
+    <view class='deail_listr'>
+      <view class='mywalletname'>{{item.inputtime}}</view>
+      <view class='mywalletm'>-{{item.money}}</view>
+    </view> 
+  </view>
+</view>

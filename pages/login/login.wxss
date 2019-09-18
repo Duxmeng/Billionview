@@ -1,0 +1,7 @@
+/* pages/login/login.wxss */
+page{background: #EFEFF4;text-align: center;font-size: 24rpx;}
+image{width: 406rpx;margin: 245rpx auto 55rpx;display: block;}
+.h2{color: #282828;}
+.p{color: #999;}
+.btn{width: 306rpx;height: 70rpx;line-height: 70rpx;background: #FEDD02;border-radius: 5rpx;margin: 60rpx auto 0;font-size: 34rpx;color: #000;}
+button::after{border:0 none;}

@@ -1,0 +1,45 @@
+<!--pages/mine/Mywallet/Mywallet.wxml-->
+<view class='wrapper'>
+  <view class='wallet'>
+    <view class='balance'>钱包余额</view> 
+    <view class='balance_detail'>
+      <view class='detail2' wx:if='{{infor.amount==undefined}}'><text class='detail1'>¥</text>0.00</view>
+      <view class='detail2' wx:else><text class='detail1'>¥</text>{{infor.amount}}</view>
+      <view class='detail3' bindtap='wadetailed'>明细</view>
+    </view>
+    <view class='walletul'>
+      <view class='walletli lileft'>
+        <view class='wali1'>充值金额</view>
+        <view class='wali2' wx:if='{{infor.recharge==undefined}}'><text class='watextd'>¥</text>0.00</view>
+        <view class='wali2' wx:else><text class='watextd'>¥</text>{{infor.recharge}}</view>
+      </view>
+      <view class='walletli'>
+        <view class='wali1'>收入金额</view>
+        <view class='wali2' wx:if='{{infor.look==undefined}}'><text class='watextd'>¥</text>0.00</view>
+        <view class='wali2' wx:else><text class='watextd'>¥</text>{{infor.look}}</view>
+      </view>
+      <view class='walletli'>
+        <view class='wali1'>支出金额</view>
+        <view class='wali2' wx:if='{{infor.seen==undefined}}'><text class='watextd'>¥</text>0.00</view>
+        <view class='wali2' wx:else><text class='watextd'>¥</text>{{infor.seen}}</view>
+      </view>
+      <view class='walletli'>
+        <view class='wali1'>提现金额</view>
+        <view class='wali2' wx:if='{{infor.withdraw==undefined}}'><text class='watextd'>¥</text>0.00</view>
+        <view class='wali2' wx:else><text class='watextd'>¥</text>{{infor.withdraw}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='mine_list'>
+    <view class='mine_one' bindtap='pay'>
+      <image src='../../../images/recharge.png'></image>
+      <text>充值</text>
+      <view class='smalltext'>(最低限额100元)</view>
+    </view>
+    <view class='mine_one' bindtap="manage">
+      <image src='../../../images/withdrawal.png'></image>
+      <text>提现</text>
+      <view class='smalltext'>(最低10元提现)</view>
+    </view>
+  </view>
+</view>

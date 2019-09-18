@@ -1,0 +1,8 @@
+<view wx:if="{{canIUse}}">
+    <image src='../../images/ch.png' mode='widthFix'></image>
+    <view class='h2'>亿看申请获得以下权限：</view>
+    <view class='p'>获得你的公开信息（昵称，头像等）</view>
+    <button class='btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindInfo">确认授权</button>
+</view>
+<view wx:else>请升级微信版本</view>
+

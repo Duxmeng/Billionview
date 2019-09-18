@@ -1,0 +1,10 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='recharge_top'>
+  <view class='re_title'>充值金额</view>
+  <view class='re_input'>
+    <view class='moneysmall'>¥</view>
+    <input name='number' bindinput='watchPassWord' type='number'></input>
+    <!-- <image bindtap='clearnum' class="rechimg {{valuenull==0?'disnone':''}}" src='../../images/clear.png'></image> -->
+  </view>
+</view>
+<view class='button' bindtap='pay'>充值</view>

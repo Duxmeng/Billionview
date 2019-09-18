@@ -1,0 +1,8 @@
+/* pages/rechrge_success/rechrge_success.wxss */
+.button{width:690rpx;height:88rpx;line-height:88rpx;font-size:36rpx;color:#353535;background:#fedd02;text-align:center;border-radius:5px;margin:20rpx auto;}
+.center{text-align:center;}
+.su_img{padding-top:52rpx;}
+.su_img image{width:100rpx;height:100rpx;vertical-align: top;}
+.resu_text{line-height:96rpx;font-size:36rpx;color:#000000;}
+.platext{font-size:28rpx;color:#888888;padding:150rpx 0rpx 20rpx 0rpx;}
+.resumoney{font-size:80rpx;color:#010000;padding-bottom:280rpx;}

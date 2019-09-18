@@ -1,0 +1,21 @@
+/* pages/mine/Mywallet/mwdetailed/mwdetailed.wxss */
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+page{background:#efeff4;}
+.scoll-h{height: 100%;}
+.nav{height:98rpx;line-height:98rpx;border-bottom:1px solid #dadada;display:flex;font-size:30rpx;color:#353535;background:#eaeaea;}
+.nav_li{flex:auto;text-align:center;}
+.nav_li{border-left:1px solid #cccccc;}
+.nav .nav_li:first-child{border:none}
+.active{background:#fafafa;}
+.deail_list{color:#000000;display:flex;padding:35rpx 30rpx;border-bottom:1px solid #dadada;background:#fff;justify-content:space-between;}
+.deail_list .mywalletname{padding-bottom:16rpx;}
+.deail_listl .mywalletname{font-weight:bold;font-size:30rpx;}
+.deail_listl .mywalletm{font-size:24rpx;}
+.deail_listr{text-align:right;}
+.deail_listr .mywalletname{font-size:24rpx;}
+.deail_listr .mywalletm{font-size:30rpx;font-weight:bold;}
+.newsNull{width: 377rpx;display: block;margin: 200rpx auto 0;}

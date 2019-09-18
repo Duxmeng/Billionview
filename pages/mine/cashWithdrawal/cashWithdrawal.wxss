@@ -1,0 +1,40 @@
+/* pages/mine/cashWithdrawal/cashWithdrawal.wxss */
+page{padding-bottom: 30rpx;}
+button::after{
+  border:0 none;
+}
+.cash_top{width: 100%;background: #fedd02;}
+.cash_list{display: flex;text-align: center;padding: 73rpx 0 50rpx;}
+.cash_list .cash_item{flex: 1;color: #fff;font-size: 50rpx;}
+.cash_list text{display: block;}
+.cash_item .title{font-size: 30rpx;}
+.cash_sub{background: rgba(255,255,255,.3);padding: 15rpx 30rpx;display: flex;justify-content: space-between;flex-wrap:wrap;}
+.cash_sub input{width:482rpx;height:82rpx;background:#fff;border-radius:8rpx;padding-left: 23rpx;font-size: 28rpx;}
+.cash_sub .tips{font-size: 22rpx;color: #fff;padding-top: 10rpx;}
+.cash_sub .cash_btn{width:166rpx;height:78rpx;border:2rpx solid #fff;border-radius:8rpx;line-height: 78rpx;padding: 0;font-size: 28rpx;background: rgba(255,255,255,.1);color: #fff;text-align: center;}
+.h2{font-size: 32rpx;color: #333;line-height: 98rpx;border-bottom: 1rpx solid #dbdbdb;padding-left: 30rpx;}
+.scoll-h{height: 100%;}
+.nav{height:98rpx;line-height:98rpx;display:flex;font-size:30rpx;color:#353535;margin-bottom: 25rpx;}
+.nav_li{flex:auto;text-align:center;position: relative;}
+.nav .nav_li:first-child{border:none}
+.active{color:#fedd02;}
+.nav_li icon{width: 10rpx;height: 8rpx;opacity: 0;position: absolute;bottom: 0;left: 50%;margin-left: -5rpx;background: #fedd02;border-radius: 50rpx;}
+.active icon{opacity: 1;}
+.alipay{padding: 0 64rpx;}
+.alipay input{width: 100%;height: 89rpx;line-height: 89rpx;border:2rpx solid #dbdbdb;border-radius:8rpx;font-size: 28rpx;margin-bottom: 30rpx;padding-left: 34rpx;box-sizing: border-box;}
+.alipay_btn{width: 100%;height: 89rpx;line-height: 89rpx;background: #fedd02;border-radius: 8rpx;text-align: center;font-size: 32rpx;color: #fffefe;}
+.rules {padding: 50rpx 57rpx 0;}
+.rules .h3{font-size: 32rpx;color: #666;text-align: center;margin-bottom: 30rpx;position: relative;}
+.rules .h3 text{width: 154rpx;display: inline-block;background: #fff;position: relative;z-index: 9;}
+.rules .h3::before{content: "";width:100%;height: 2rpx;background: #dbdbdb;transform: translateY(-50%);z-index: 1;position: absolute;top: 50%;left: 0;}
+.rules view{font-size: 24rpx;color: #999;line-height: 42rpx;}
+
+.showModal{background: rgba(0, 0, 0, .5);position: fixed;top:0;left:0;width: 100%;height: 100%;z-index: 99;}
+.modal{width: 602rpx;height: 692rpx;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: #fff;border-radius: 10rpx;text-align: center;}
+.close{display: flex;justify-content: flex-end;margin: 29rpx;}
+.close image{width: 28rpx;height: 28rpx;display: block;}
+.success_img{width: 406rpx;height: 285rpx;margin: 0 auto;}
+.showtext{padding: 0 100rpx;font-size:26rpx;color: #999;margin-top: 48rpx;}
+.showtext text{display: block;}
+.success_btn{margin: 35rpx auto 0;width: 392rpx;height: 66rpx;text-align: center;line-height: 66rpx;background: #fedd02;border-radius: 50rpx;font-size: 32rpx;color: #fff;}
+.withdraw_img{width: 50%;margin:0 auto 30rpx;display:block;}

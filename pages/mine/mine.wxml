@@ -1,0 +1,30 @@
+<!--pages/mine/mine.wxml-->
+<view class='wrapper'>
+  <view class='user'>
+    <view class='userw'>
+      <view class='title'>{{userfo.nickname}}</view>
+      <view class='text'>{{userfo.remark}}</view>
+    </view>
+    <image class='people' src='{{URL}}{{userfo.avatar}}'></image>
+  </view>
+  <view class='mine_list'>
+    <view class='mine_one' bindtap="mywallet">
+      <image style='height:30rpx' src='../../images/money.png'></image>
+      <text>我的钱包</text>
+    </view>
+    <view class='mine_one' bindtap="manage">
+      <image src='../../images/advertisement.png'></image>
+      <text>广告管理</text>
+    </view>
+  </view>
+  <view class='mine_list'>
+    <view class='mine_one' bindtap="mydata">
+      <image src='../../images/data.png'></image>
+      <text>修改资料</text>
+    </view>
+  </view>
+  <!-- <view class='mine_list'>
+    <view bindtap='video'  style='width:100rpx;height:100rpx;background:#fff;'></view>
+    <video id="myVideo" src="{{src}}" initial-time='1' duration='3' show-center-play-btn='false' controls='false' show-play-btn='false' objectFit='cover'></video>
+  </view> -->
+</view>

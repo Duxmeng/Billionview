@@ -1,0 +1,59 @@
+<!--pages/mine/cashWithdrawal/cashWithdrawal.wxml-->
+<view class='cash_top'>
+  <view class='cash_list'>
+    <view class='cash_item'>
+      <text class='title'>资产总额（元）</text>
+      <text>{{money}}</text>
+    </view>
+    <view class='cash_item'>
+      <text class='title'>可提现（元）</text>
+      <text>{{money}}</text>
+    </view>
+  </view>
+  <view class='cash_sub'>
+    <input type='number' placeholder='请输入提现金额' value='{{withdraw_money}}' bindinput='money'></input>
+    <view class='cash_btn' bindtap='sure'>提现</view>
+    <view class='tips'>提现手续费{{fee}}%</view>
+    <!-- <view class='tips'>提现金额（收取0.1%服务费）</view> -->
+  </view>
+</view>
+<view class='h2'>我的提现账户</view>
+<view class='nav'>
+  <view wx:for="{{nav}}" wx:key="{{navIndex}}" class="nav_li {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="swichNav">{{item.name}}<icon></icon>
+  </view>
+</view>
+<form bindsubmit="submitForm">
+  <view class='alipay'>
+    <input type='text' id="realname" name="realname" placeholder='请输入真实姓名' value='{{realname}}'></input>
+    <input type='number' id="tel" name="tel" placeholder='请输入手机号' value='{{tel}}'></input>
+    <input type='number' id="alipay" name="alipay" wx:if="{{wechatShow==1}}" placeholder='请输入支付宝账号' value='{{alipay}}'></input>
+    <view wx:else>
+      <input type='text' id="wechat" name="wechat" placeholder='请输入微信账号' value='{{wechat}}'></input>
+      <image class='withdraw_img' src="{{withdraw_img}}" wx:if="{{haveImg}}" mode='widthFix' bindtap='withdrawImg'></image>
+      <image class='withdraw_img' src="{{withdraw_img01}}" wx:else mode='widthFix' bindtap='withdrawImg'></image>
+    </view>
+    <button class='alipay_btn' formType="submit">确 认</button>
+  </view>
+</form>
+<view class='rules'>
+  <view class='h3'><text>提现规则</text></view>
+  <view>1、余额可提现至微信或支付宝。</view>
+  <view>2、提交提现申请后，平台会在3个工作日内将提现金额支付到您的提现账户。</view>
+  <view>3、可提现余额每满10即可开始提现。</view>
+  <view>4、如从事违反国家法律的行为，将被冻结账户，亿看将保留提交公安的权利。</view>
+</view>
+<view class='showModal' wx:if="{{showModal==1}}">
+  <view class='modal'>
+    <view class='close'>
+      <image src='../../../images/zf_close.png' bindtap='close'></image>
+    </view>
+    <image src='../../../images/success.png' class='success_img'></image>
+    <view class='showtext'>
+      <text>您已申请成功，</text>
+      <text>平台会在3个工作日内</text>
+      <text>将提现金额支付到您的提现账户。</text>
+    </view>
+    <view class='success_btn' bindtap='close'>确认</view>
+  </view>
+</view>
+

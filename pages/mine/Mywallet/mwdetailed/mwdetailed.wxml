@@ -1,0 +1,34 @@
+<!--pages/mine/Mywallet/mwdetailed/mwdetailed.wxml-->
+<view class='wrapper'>
+  <view class='nav'>
+    <view wx:for="{{nav}}" wx:key="{{navIndex}}" class="nav_li {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="swichNav">{{item.name}}
+    </view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+      <swiper-item wx:for="{{nav}}" wx:key="{{navIndex}}">
+        <!-- 内容为空时 -->
+        <scroll-view wx:if = "{{empty == 0}}" scroll-y="true" class="scoll-h" >
+          <view class="mydata_null">
+            <image class="newsNull" src = "../../../../images/notices.png" mode='widthFix'></image>      
+          </view>
+        </scroll-view>
+        <!-- 内容不为空时 -->
+        <scroll-view wx:else="{{empty==1}}" scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower" lower-threshold="0" upper-threshold="0">
+          <view class='deail_list' wx:for="{{list}}" wx:key="{{listIndex}}">
+             <view class='deail_listl'>
+              <view class='mywalletname' wx:if='{{item.type==1}}'>在线充值</view>
+              <view class='mywalletname' wx:if='{{item.type==2}}'>观看广告</view>
+              <view class='mywalletname' wx:if='{{item.type==3}}'>被观看一次</view>
+              <view class='mywalletname' wx:if='{{item.type==4}}'>提现</view>
+              <view class='mywalletm'>余额：{{item.amount}}</view>
+             </view> 
+             <view class='deail_listr'>
+              <view class='mywalletname'>{{item.inputtime}}</view>
+              <view class='mywalletm' wx:if='{{item.change==1}}'>+{{item.money}}</view>
+              <view class='mywalletm' wx:if='{{item.change==2}}'>-{{item.money}}</view>
+             </view> 
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+</view>

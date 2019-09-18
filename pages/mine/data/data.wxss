@@ -1,0 +1,15 @@
+/* pages/mine/data/data.wxss */
+page{background: #EFEFF4;}
+.data{background: #fff;padding: 0 30rpx;}
+.data_item{display: flex;border-bottom: 1rpx solid #EFEFEF;align-items: center;height: 85rpx;}
+.data_head{height: 170rpx;}
+.data_item:last-child{border-bottom: 0 none;}
+.data_item image{width: 100rpx;height: 100rpx;border-radius: 100%;margin-right: 40rpx;}
+.data_item text{font-size: 28rpx;color: #888;}
+.data_item .label{font-size: 30rpx;color: #282828;width: 145rpx;}
+.data_item input{width: 80%;font-size: 28rpx;height: 85rpx;}
+.data_btn{position: absolute;bottom: 38rpx;width: 690rpx;text-align: center;left:50%;margin-left: -345rpx;height: 88rpx;line-height: 88rpx;background: #FEDD02;font-size: 36rpx;color: #353535;border-radius: 8rpx;}
+button::after{border:0 none;}
+.profile{height: 150rpx;align-items:start;}
+.profile text{padding-top: 25rpx;}
+.data_item textarea{height: 100rpx;font-size: 28rpx;line-height:45rpx;width: 85%;display: inline-flex;padding-top: 15rpx;}

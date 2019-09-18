@@ -1,0 +1,18 @@
+<!--pages/mine/data/data.wxml-->
+<form bindsubmit="submitForm">
+  <view class='data'>
+    <view class='data_item data_head' bindtap='head'>
+      <image src='{{URL}}{{avatar}}'></image>
+      <text>修改头像</text>
+    </view>
+    <view class='data_item'>
+      <text class='label'>昵称</text>
+      <input placeholder='请填写您的昵称' id="nickname" name="nickname" value='{{nickname}}'></input>
+    </view>
+    <view class='data_item profile'>
+      <text class='label'>简介</text>
+      <textarea placeholder='让您的朋友更了解您' maxlength='36' id="remark" name="remark" value='{{remark}}'></textarea>
+    </view>
+  </view>
+  <button class='data_btn' formType="submit">保存</button>
+</form>

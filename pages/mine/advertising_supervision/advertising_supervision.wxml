@@ -1,0 +1,169 @@
+<!--pages/mine/mycollect/mycollect.wxml-->
+<view class="wrapper">
+  <view class="padd-bo">
+    <view class='pos'>
+      <view class='user'>
+          <view class='userw'>
+          <view class='title'>{{userfo.nickname}}</view>
+          <view class='text'>{{userfo.remark}}</view>
+          </view>
+          <image class='people' src='{{URL}}{{userfo.avatar}}'></image>
+      </view>
+      <view class="tab-h"> 
+        <!-- 导航 -->
+        <view wx:for="{{nav}}" wx:key="{{navIndex}}" class="tab-item {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="swichNav" data-ttype="{{item.ttype}}">{{item.classname}}
+        </view>
+      </view>
+    </view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <!--1 待审核 -->
+      <swiper-item>
+        <!-- 内容为空时 -->
+        <scroll-view wx:if = "{{empty == 0}}" scroll-y="true" class="scoll-h" >
+          <view class="mydata_null">
+            <image class="notices" src = "../../../images/notices.png"></image>   
+          </view>
+        </scroll-view>
+        <!-- 内容不为空时 -->
+        <scroll-view wx:else="{{empty==1}}" scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower">
+            <view class='ad_li' wx:for="{{adli}}" wx:key="{{adliIndex}}" >
+              <view class='ad_lil'>
+                <image class='ad_liimg' src='{{item.thumb}}'></image>
+                <view class='ad_pos'>
+                  <image src='../../../images/play.png'></image>
+                </view>
+              </view>
+              <view class='ad_lir'>
+                <view class='ad_title'>{{item.title}}</view>
+                <view class='ad_time'>{{item.inputtime}}</view>
+                <view class='ad_text'>{{item.content}}</view>
+              </view>
+            </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 2 已通过 -->
+      <swiper-item> 
+        <!-- 内容为空时 -->
+        <scroll-view wx:if = "{{empty == 0}}" scroll-y="true" class="scoll-h" >
+          <view class="mydata_null">
+            <image class="notices" src = "../../../images/notices.png"></image>
+          </view>
+        </scroll-view>
+        <!-- 内容不为空时 -->
+        <scroll-view wx:else="{{empty==1}}" scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower">
+            <view class='ad_li adlibig' wx:for="{{passlist}}" wx:key="{{passlistIndex}}">
+              <view class='ad_lil'>
+                <image class='ad_liimg' src='{{item.thumb}}'></image>
+                <view class='ad_pos'>
+                  <image src='../../../images/play.png'></image>
+                </view>
+              </view>
+              <view class='ad_lir'>
+                <view class='ad_title'>{{item.title}}</view>
+                <view class='ad_time'>{{item.inputtime}}</view>
+                <view class='ad_text'>{{item.content}}</view>
+                <view class='list_button' bindtap="send" data-id='{{item.id}}'>发布</view>
+              </view>
+            </view>
+          
+        </scroll-view>
+      </swiper-item>
+      <!-- 3 未通过 -->
+      <swiper-item>
+        <!-- 内容为空时 -->
+        <scroll-view wx:if = "{{empty == 0}}" scroll-y="true" class="scoll-h" >
+          <view class="mydata_null">
+            <image class="notices" src = "../../../images/notices.png"></image>
+          </view>
+        </scroll-view>
+        <!-- 内容不为空时 -->
+        <scroll-view wx:else="{{empty==1}}" scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower">
+            <view class='ad_li adlibig' wx:for="{{nopasslist}}" wx:key="{{nopasslistIndex}}" data-id='{{item.id}}'>
+              <view class='ad_lil'>
+                <image class='ad_liimg' src='{{item.thumb}}'></image>
+                <view class='ad_pos'>
+                  <image src='../../../images/play.png'></image>
+                </view>
+              </view>
+              <view class='ad_lir'>
+                <view class='ad_title'>{{item.title}}</view>
+                <view class='ad_time'>{{item.inputtime}}</view>
+                <view class='ad_text'>{{item.content}}</view>
+                <view class='arbottom'>
+                  <view class='no_infor'>{{item.marked_words}}</view>
+                  <view class='list_button' bindtap="release" data-id='{{item.id}}'>发布</view>
+                </view>
+              </view>
+            </view>
+         
+        </scroll-view>
+      </swiper-item>
+      <!-- 4 已上线 -->
+      <swiper-item>
+        <!-- 内容为空时 -->
+        <scroll-view wx:if = "{{empty == 0}}" scroll-y="true" class="scoll-h" >
+          <view class="mydata_null">
+            <image class="notices" src = "../../../images/notices.png"></image>
+          </view>
+        </scroll-view>
+        <!-- 内容不为空时 -->
+        <scroll-view wx:else="{{empty==1}}" scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower">
+            <view class='ad_li adlibig' wx:for="{{onlinelist}}" wx:key="{{onlinelistIndex}}">
+              <view class='ad_lil'>
+                <image class='ad_liimg' src='{{item.thumb}}'></image>
+                <view class='ad_pos'>
+                  <image src='../../../images/play.png'></image>
+                </view>
+              </view>
+              <view class='ad_lir'>
+                <view class='ad_title'>{{item.title}}</view>
+                <view class='ad_time'>{{item.inputtime}}</view>
+                <view class='ad_text'>{{item.content}}</view>
+                <view class='arbottom'>
+                  <view class='list_button downline' bindtap="outline" data-id='{{item.id}}'>下线</view>
+                  <view class='eye' bindtap='browsego' data-id='{{item.id}}'>
+                    <image src='../../../images/eye1.png'></image>
+                    {{item.click}}
+                  </view>
+                </view>
+              </view>
+            </view>
+          
+        </scroll-view>
+      </swiper-item>
+      <!-- 5 已下线 -->
+      <swiper-item>
+        <!-- 内容为空时 -->
+        <scroll-view wx:if = "{{empty == 0}}" scroll-y="true" class="scoll-h" >
+          <view class="mydata_null">
+            <image class="notices" src = "../../../images/notices.png"></image>        
+          </view>
+        </scroll-view>
+        <!-- 内容不为空时 -->
+        <scroll-view wx:else="{{empty==1}}" scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower">
+          <view class='ad_li adlibig' wx:for="{{Offlinelist}}" wx:key="{{OfflinelistIndex}}">
+              <view class='ad_lil'>
+                <image class='ad_liimg' src='{{item.thumb}}'></image>
+                <view class='ad_pos'>
+                  <image src='../../../images/play.png'></image>
+                </view>
+              </view>
+              <view class='ad_lir'>
+                <view class='ad_title'>{{item.title}}</view>
+                <view class='ad_time'>{{item.inputtime}}</view>
+                <view class='ad_text'>{{item.content}}</view>
+                <view class='arbottom' wx:if = "{{item.issuance == 0}}">
+                  <view class='no_infor'>{{item.marked_words}}</view>
+                  <view class='list_button' bindtap="outSend" data-id='{{item.id}}'>发布</view>
+                </view>
+                <view class='arbottom' wx:else = "{{item.issuance == 1}}">
+                  <view class='no_infor'>{{item.noinfor}}</view>
+                  <view class='list_button red' bindtap="Recharge">充值</view>
+                </view>
+              </view>
+            </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

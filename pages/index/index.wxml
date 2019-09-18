@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class='' wx:if='{{nocontent==0}}'>
+  <image src='../../images/ch.png' mode='widthFix' class='noimg'></image>
+  <view class='send_btn' bindtap='send'>发布广告</view>
+</view>
+<view class='wrapper' wx:if='{{nocontent==1}}'>
+  <view class="content">
+    <view class="left">
+        <view class='item-masonry'  wx:if="{{index%2==0}}" wx:for='{{note}}' wx:key='{{notelist}}' data-id='{{item.id}}' bindtap='clickDetail'>
+          <view class='list'>
+            <image class='l_img' src='{{item.thumb}}' mode='widthFix'></image>
+            <view class='imgtext'>{{item.title}}</view>
+            <view class='text_posi'><image src='../../images/play.png'></image></view>
+            <view class='daysee' wx:if='{{item.seened==1}}'>今日已看</view>
+          </view>
+          <view class='list_text'>
+            <image class='listl' src='{{URL}}{{item.avatar}}'></image>
+            <view class='listr'>
+              <view class='listr_name'>{{item.nickname}}</view>
+              <view class='listr_int'><image src='../../images/eye.png'></image>{{item.click}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="right">
+        <view class='item-masonry'  wx:if="{{index%2==1}}" wx:for='{{note}}' wx:key='{{notelist}}' data-id='{{item.id}}' bindtap='clickDetail'>
+          <view class='list'>
+            <image class='l_img' src='{{item.thumb}}' mode='widthFix'></image>
+            <view class='imgtext'>{{item.title}}</view>
+            <view class='text_posi'><image src='../../images/play.png'></image></view>
+            <view class='daysee' wx:if='{{item.seened==1}}'>今日已看</view>
+          </view>
+          <view class='list_text'>
+            <image class='listl' src='{{URL}}{{item.avatar}}'></image>
+            <view class='listr'>
+              <view class='listr_name'>{{item.nickname}}</view>
+              <view class='listr_int'><image src='../../images/eye.png'></image>{{item.click}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+  <!-- <view class='case-page'>
+    <view class='list-masonry'>
+      <view class='item-masonry' wx:for='{{note}}' wx:key='{{notelist}}' data-id='{{item.id}}' bindtap='clickDetail'>
+        <view class='list'>
+          <image class='l_img' src='{{item.thumb}}' mode='widthFix'></image>
+          <view class='imgtext'>{{item.title}}</view>
+          <view class='text_posi'><image src='../../images/play.png'></image></view>
+          <view class='daysee' wx:if='{{item.seened==1}}'>今日已看</view>
+        </view>
+        <view class='list_text'>
+          <image class='listl' src='{{URL}}{{item.avatar}}'></image>
+          <view class='listr'>
+            <view class='listr_name'>{{item.nickname}}</view>
+            <view class='listr_int'><image src='../../images/eye.png'></image>{{item.click}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>
+

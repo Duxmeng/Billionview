@@ -1,0 +1,42 @@
+/* pages/demo/demo.wxss */
+.background{
+  width: 100%;
+  height: 400rpx;
+  background: #eee;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.image_container{
+  position: absolute;
+  display: flex;
+}
+.image{
+  width: 800rpx;
+  height: 400rpx;
+  float: left;
+}
+.anim_next{
+  transition: transform 0.8s;
+  transform:translateX(-800rpx);
+}
+.anim_pre{
+  left: -800rpx;
+  transition: transform 0.8s;
+  transform:translate(800rpx,0);
+}
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pots{
+  width: 20rpx;
+  height: 20rpx;
+  border: 2rpx solid gray;
+  border-radius: 100%;
+  margin: 20rpx;
+}
+.gray{
+  background: gray;
+}

@@ -1,0 +1,81 @@
+<!--pages/advertising/advertising.wxml-->
+<form bindsubmit="submitForm">
+  <view class='wrapper'>
+    <view class='advertw'>
+      <view class='advert_one advert_height'>
+        <text>标题：</text>
+        <textarea placeholder='写标题并使用合适的话题，能让更多人看到~' placeholder-style='color:#cccccc;' id="title" name="title" value='{{title}}' wx:if="{{dispp!=2}}" bindinput='txtInput' bindlinechange="textAreaLineChange" auto-height></textarea>
+        <view class='rich-text' style="{{('height:' + txtHeight + 'rpx')}}" wx:else>
+          <rich-text nodes="{{realtitle}}"></rich-text>
+        </view>
+      </view>
+      <view class='advert_one'>
+        <text>内容：</text>
+        <textarea placeholder='内容贴合主题，并且生动有趣能吸引更多观看者~' placeholder-style='color:#cccccc;' id="content" name="content" value='{{content}}' wx:if="{{dispp!=2}}" bindinput='txtconInput' bindlinechange="textAreaLineChange" auto-height></textarea>
+        <view class='rich-text' style="{{('height:' + txtHeight + 'rpx')}}" wx:else>
+          <rich-text nodes="{{realcontent}}"></rich-text>
+        </view>
+      </view>
+      <view class='advert_one advert_link'>
+        <text>链接：</text>
+        <textarea placeholder='例如:http(s)://www.gaozhiw.com' placeholder-style='color:#cccccc;' id="link" name="link" value='{{link}}' wx:if="{{dispp!=2}}" bindinput='txtlinkInput' bindlinechange="textAreaLineChange" auto-height></textarea>
+        <view class='rich-text' style="{{('height:' + txtHeight + 'rpx')}}" wx:else>
+          <rich-text nodes="{{reallink}}"></rich-text>
+        </view>
+      </view>
+    </view>
+    <view class='img_list'>  
+      <!-- <image style='display:none' wx:if="{{imgaddress==0}}"></image> -->
+      <image bindtap='cover' wx:if="{{imgaddress==1}}" src='{{openImg}}'></image>
+      <image bindtap='cover' wx:if="{{imgaddress==0}}" src='{{coverImg}}'></image>
+      <block wx:for="{{imgList}}" wx:key='{{imgListIndex}}' wx:if='{{resource_type==1}}'>
+        <view class='image_item'>
+          <image src='{{item}}'></image>
+          <image class='close' src='../../../images/clear.png' bindtap='clear' data-index='{{index}}'></image>
+        </view>
+      </block>
+      <image wx:if="{{imgad == true}}" bindtap='uploadImg' src='../../../images/upload.png'></image>
+      <!-- <image src='{{adImg}}' wx:if='{{resource_type==1}}'></image> -->
+      <!-- <live-player  class='video' wx:if='{{resource_type==2}}' id="player" src="{{advideo}}" mode="RTC" /> -->
+      <video class='video' src='{{advideo}}' initial-time='1'  wx:if='{{resource_type==2}}'></video>
+      <image bindtap='openalert' class='choose_ad' src='../../../images/ad.png' wx:if="{{choose_ad==true}}"></image>
+    </view>
+    <view class='addw'>
+      <view class='address' bindtap='thisaddress'>
+        <image style='width:47rpx;height:54rpx;' src='../../../images/address.png'></image>
+        <text>{{address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='foot'>
+    <button bindtap='give_up' style='margin-right:20rpx'>放弃发布</button>
+    <button class='but' formType="submit">马上发布</button>
+  </view>
+  <view class="chooseiv {{dispp==1?'dispy':''}}">
+    <view class="psib">
+      <view class='chimgdet'>
+        <view>上传类型:</view>
+        <view class='checkbox-con'>
+          <radio-group class="radio-group" bindchange="radioChange">
+            <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{items}}" bindtap='radio' data-index="{{index}}" wx:key="item.name">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+            </label>
+          </radio-group>
+        </view>
+        <view>上传时长:</view>
+        <view class='times_sub'>(计费单位￥{{fee}}元/s)</view>
+        <view class="checkbox-con">
+          <view class="radio-group">
+            <block wx:for="{{times}}" wx:key="id" wx:for-index="i">
+              <view class="tags-item {{currentItem==i?'active-tag':''}}" data-id="{{i}}" bindtap="tagChoose">{{item}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class='choose_btn'>
+        <image src='../../../images/yes.png' bindtap='yes'></image>
+        <image src='../../../images/no.png' bindtap='cloalert'></image>
+      </view>
+    </view>
+  </view>
+</form>
